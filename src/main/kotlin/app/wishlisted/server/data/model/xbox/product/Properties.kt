@@ -1,0 +1,33 @@
+package app.wishlisted.server.data.model.xbox.product
+
+data class Properties(
+    val Attributes: List<Attribute>?,
+    val CanInstallToSDCard: Boolean?,
+    val Categories: List<String>?,
+    val Category: String?,
+    val ExtendedMetadata: String?,
+    val HasAddOns: Boolean?,
+    val IsAccessible: Boolean?,
+    val IsDemo: Boolean?,
+    val IsLineOfBusinessApp: Boolean?,
+    val IsPrivateBeforeDateHint: String?,
+    val IsPublishedToLegacyWindowsPhoneStore: Boolean?,
+    val IsPublishedToLegacyWindowsStore: Boolean?,
+    val OwnershipType: Any?,
+    val PackageFamilyName: String?,
+    val PackageIdentityName: String?,
+    val PdpBackgroundColor: String?,
+    val ProductGroupId: String?,
+    val ProductGroupName: String?,
+    val PublisherCertificateName: String,
+    val PublisherId: String,
+    val RevisionId: String,
+    val SkuDisplayGroups: List<SkuDisplayGroup>,
+    val Subcategory: Any?,
+    val XboxConsoleGenCompatible: Any?,
+    val XboxConsoleGenOptimized: Any?,
+    val XboxCrossGenSetId: Any?,
+    val XboxLiveGoldRequired: Boolean?,
+    val XboxLiveTier: String?,
+    val XboxXPA: Any?
+)

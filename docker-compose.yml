@@ -1,0 +1,36 @@
+version: '3'
+services:
+  spring:
+    image: daniloleemes/wishlisted-server
+    ports:
+      - 8080:8080
+    links:
+      - postgres
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  postgres:
+    image: postgres:10-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: CG)TI6TLIJpq7%Ifjzxi
+      POSTGRES_DB: wishlisted
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  pgAdmin:
+    image: dpage/pgadmin4
+    ports:
+      - 8083:8083
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@mail.com
+      PGADMIN_DEFAULT_PASSWORD: supersenha
+    logging:
+      driver: none
